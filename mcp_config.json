@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "doubao-brand-analyzer": {
+      "command": "python",
+      "args": [
+        "/path/to/crawl01ai/doubao_mcp_server.py"
+      ],
+      "env": {
+        "DOUBAO_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
