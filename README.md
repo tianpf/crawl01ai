@@ -50,17 +50,52 @@ DEBUG=false
 
 ### 2. 启动MCP服务器
 
+#### 方式一：直接启动
 ```bash
 python doubao_mcp_server.py
 ```
 
-### 3. 测试功能
+#### 方式二：使用启动脚本
+```bash
+./start_server.sh
+```
 
-运行测试脚本验证功能：
+#### 方式三：配置为MCP服务器
+将以下配置添加到您的MCP客户端配置文件中：
 
+```json
+{
+  "mcpServers": {
+    "doubao-brand-analyzer": {
+      "command": "python",
+      "args": ["/path/to/crawl01ai/doubao_mcp_server.py"],
+      "env": {
+        "DOUBAO_API_KEY": "your_api_key_here"
+      }
+    }
+  }
+}
+```
+
+## 快速体验
+
+### 运行演示
+```bash
+python demo.py
+```
+
+这将展示完整的品牌分析流程，包括：
+- 品牌信息搜索和获取
+- 多维度评分计算
+- 行业基准对比
+- 多品牌对比分析
+
+### 运行测试
 ```bash
 python test_mcp_server.py
 ```
+
+验证所有核心功能是否正常工作。
 
 ## MCP工具说明
 
